@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/Presentation/">
+    <Project Path="src/AIPractice.Api/AIPractice.Api.csproj" />
+  </Folder>
+  <Folder Name="/Business/">
+    <Project Path="src/AIPractice.Application/AIPractice.Application.csproj" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="src/AIPractice.Domain/AIPractice.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="src/AIPractice.Infrastructure.DataAccess/AIPractice.Infrastructure.DataAccess.csproj" />
+    <Project Path="src/AIPractice.Infrastructure.ExternalServices/AIPractice.Infrastructure.ExternalServices.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlock/">
+    <Project Path="src/AIPractice.BuildingBlock/AIPractice.BuildingBlock.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/AIPractice.Composition/AIPractice.Composition.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/AIPractice.ArchTests/AIPractice.ArchTests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,21 @@
+@HostAddress = http://localhost:5187
+
+### Summarize a proposal
+POST {{HostAddress}}/api/v1/proposals/summarize
+Content-Type: application/json
+Accept: application/json
+
+{
+  "proposal": "We want to split our monolithic order system into microservices so teams can deploy independently. The new Order, Payment and Inventory services will communicate through RabbitMQ and each own a PostgreSQL database. We must keep the existing REST API contract unchanged and finish before Black Friday. It is unclear how distributed transactions between Payment and Inventory will be handled."
+}
+
+### Summarize with an empty proposal (expects a validation error)
+POST {{HostAddress}}/api/v1/proposals/summarize
+Content-Type: application/json
+Accept: application/json
+
+{
+  "proposal": ""
+}
+
+###
