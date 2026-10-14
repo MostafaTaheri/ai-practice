@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 using Asp.Versioning;
+using Mapster;
+using MapsterMapper;
 using AIPractice.Api.Helpers;
 using AIPractice.Api.Middlewares;
 
@@ -20,6 +22,9 @@ public static class ServiceCollectionExtensions
         services.AddOpenTelemetryObservability(configuration);
         services.AddHealthChecks();
         
+        services.AddSingleton(TypeAdapterConfig.GlobalSettings);
+        services.AddScoped<IMapper, ServiceMapper>();
+
         services.AddScoped<ICorrelationIdProvider, CorrelationIdProvider>();
         services.AddScoped<ExceptionsMiddleware>();
             

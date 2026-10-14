@@ -1,6 +1,7 @@
 using System.Text.Json;
 using AIPractice.Api.Models.Responses;
 using AIPractice.Application.Exceptions;
+using AIPractice.Application.Features.Proposals.Exceptions;
 using AIPractice.Domain.Exceptions;
 
 namespace AIPractice.Api.Middlewares;
@@ -58,6 +59,26 @@ public class ExceptionsMiddleware : BaseExceptionMiddleware
                 exception.Code,
                 "Authentication Failed.",
                 new List<string> { exception.Message, string.Join(", ", exception.Details) }), 401),
+
+            BaseBusinessProposalException.ReviewValidationException exception => (new GeneralResponse(
+                exception.Code,
+                "Model review failed validation.",
+                new List<string> { exception.Message, string.Join(", ", exception.Details) }), 502),
+
+            OperationCanceledException => (new GeneralResponse(
+                "Exception",
+                "Architecture review deadline exceeded.",
+                new List<string> { "The model did not respond within the allowed time.", "" }), 504),
+
+            HttpRequestException => (new GeneralResponse(
+                "Exception",
+                "Model dependency failed.",
+                new List<string> { "The model service is unavailable.", "" }), 502),
+
+            JsonException => (new GeneralResponse(
+                "Exception",
+                "Invalid provider response.",
+                new List<string> { "The model service returned an invalid response.", "" }), 502),
 
             BusinessException exception => (new GeneralResponse(
                 exception.Code,
