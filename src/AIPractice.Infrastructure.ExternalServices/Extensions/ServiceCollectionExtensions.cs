@@ -18,6 +18,9 @@ public static class ServiceCollectionExtensions
         services.AddHttpClient<IArchitectureModelClient, OllamaArchitectureModelClient>((sp, client) =>
         {
             client.BaseAddress = new Uri(sp.GetRequiredService<IOptions<OllamaOptions>>().Value.BaseUrl);
+
+            // The review service owns the shared 90-second deadline.
+            client.Timeout = Timeout.InfiniteTimeSpan;
         });
 
         return services;
