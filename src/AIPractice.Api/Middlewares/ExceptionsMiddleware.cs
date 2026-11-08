@@ -65,6 +65,16 @@ public class ExceptionsMiddleware : BaseExceptionMiddleware
                 "Model review failed validation.",
                 new List<string> { exception.Message, string.Join(", ", exception.Details) }), 502),
 
+            BaseBusinessProposalException.StandardsValidationException exception => (new GeneralResponse(
+                exception.Code,
+                "Standards assessment failed validation.",
+                new List<string> { exception.Message, string.Join(", ", exception.Details) }), 502),
+
+            InvalidDataException => (new GeneralResponse(
+                "Exception",
+                "Evidence or embedding validation failed.",
+                new List<string> { "The model or index returned invalid data.", "" }), 502),
+
             OperationCanceledException => (new GeneralResponse(
                 "Exception",
                 "Architecture review deadline exceeded.",

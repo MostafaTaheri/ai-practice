@@ -19,4 +19,9 @@ public abstract class BaseBusinessProposalException : BusinessException
     {
         public ReviewValidationException(List<string> errors) : base(code: "200", message: "Model output failed validation after two attempts.", details: errors) { }
     }
+
+    public sealed class StandardsValidationException : BaseBusinessProposalException
+    {
+        public StandardsValidationException(List<string> errors) : base(code: "300", message: "Standards assessment failed citation validation.", details: errors) { }
+    }
 }

@@ -5,4 +5,5 @@ public class OllamaOptions
     public const string SectionName = "Ollama";
     public string BaseUrl { get; set; } = null!;
     public string Model { get; set; } = "qwen2.5:3b";
+    public string EmbeddingModel { get; set; } = "all-minilm:22m";
 }
