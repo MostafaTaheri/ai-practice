@@ -1,4 +1,5 @@
 using AIPractice.Application.Features.Proposals.Review;
+using AIPractice.Application.Features.Proposals.ReviewWithStandards;
 using AIPractice.Application.Features.Proposals.Summarize;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<ISummarizeService, SummarizeService>();
         services.AddScoped<IReviewService, ReviewService>();
+        services.AddScoped<IReviewWithStandardsService, ReviewWithStandardsService>();
 
         return services;
     }

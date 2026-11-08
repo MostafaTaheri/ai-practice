@@ -27,4 +27,24 @@ Accept: application/json
   "proposal": "We want to split our monolithic order system into microservices so teams can deploy independently. The new Order, Payment and Inventory services will communicate through RabbitMQ and each own a PostgreSQL database. We must keep the existing REST API contract unchanged and finish before Black Friday. It is unclear how distributed transactions between Payment and Inventory will be handled."
 }
 
+### Review a proposal against standards (RAG)
+POST {{HostAddress}}/api/v1/proposals/review-with-standards
+Content-Type: application/json
+Accept: application/json
+
+{
+  "proposal": "We are building an insurance back office as a modular monolith. It calls external insurers over HTTP. Claim submissions must remain accepted during temporary insurer outages. No durable intake or recovery mechanism has been chosen.",
+  "question": "How should accepted claims survive an insurer outage?"
+}
+
+### Missing-policy case (expects insufficient_evidence)
+POST {{HostAddress}}/api/v1/proposals/review-with-standards
+Content-Type: application/json
+Accept: application/json
+
+{
+  "proposal": "We are building an insurance back office as a modular monolith hosted in a single region.",
+  "question": "What exact Australian data-residency policy has our organization approved?"
+}
+
 ###
