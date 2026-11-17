@@ -20,6 +20,7 @@
   </Folder>
   <Folder Name="/test/">
     <Project Path="test/AIPractice.ArchTests/AIPractice.ArchTests.csproj" />
+    <Project Path="test/AIPractice.Evaluation/AIPractice.Evaluation.csproj" />
     <Project Path="test/AIPractice.UnitTests/AIPractice.UnitTests.csproj" />
   </Folder>
 </Solution>
