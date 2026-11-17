@@ -1,4 +1,4 @@
-@HostAddress = http://localhost:5187
+@HostAddress = https://localhost:5001
 
 ### Summarize a proposal
 POST {{HostAddress}}/api/v1/proposals/summarize
@@ -48,3 +48,13 @@ Accept: application/json
 }
 
 ###
+
+
+### Retrieval-only diagnostic (no generation)
+POST {{HostAddress}}/api/v1/standards/search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "question": "How should accepted claims survive an insurer outage?"
+}

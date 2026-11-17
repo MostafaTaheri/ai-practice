@@ -1,0 +1,96 @@
+[
+  {
+    "id": "E01",
+    "split": "development",
+    "proposal": "An insurance back office calls external insurers over HTTP. Claims must remain accepted during an insurer outage. Durable intake has not been designed.",
+    "question": "How should accepted claims survive an insurer outage?",
+    "expectedSourceIds": [
+      "STD-001"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E02",
+    "split": "development",
+    "proposal": "A staff portal exposes customer financial reports. Authentication is planned, but report authorization has not been defined.",
+    "question": "How should report access be controlled?",
+    "expectedSourceIds": [
+      "STD-002"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E03",
+    "split": "development",
+    "proposal": "Two engineers will build and operate twelve independently deployed services. No separate scaling or release needs have been identified.",
+    "question": "What should guide the choice of service boundaries for this small team?",
+    "expectedSourceIds": [
+      "STD-003"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E04",
+    "split": "development",
+    "proposal": "The domain project directly references a model-provider SDK and a database client.",
+    "question": "How should domain rules be separated from provider and database implementations?",
+    "expectedSourceIds": [
+      "STD-004"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E05",
+    "split": "development",
+    "proposal": "A message consumer applies account changes whenever a message arrives. Duplicate deliveries are possible.",
+    "question": "How should consumers handle duplicate message deliveries?",
+    "expectedSourceIds": [
+      "STD-005"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E06",
+    "split": "development",
+    "proposal": "All modules must share one database, but each module must own an independent database. Data ownership has not been resolved.",
+    "question": "How should conflicting data ownership requirements be handled?",
+    "expectedSourceIds": [
+      "STD-006"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E07",
+    "split": "development",
+    "proposal": "The team wants to choose hosting. No approved spending figure appears in the proposal.",
+    "question": "What exact monthly infrastructure budget in dollars has our organization approved?",
+    "expectedSourceIds": [],
+    "expectedStatus": "insufficient_evidence"
+  },
+  {
+    "id": "E08",
+    "split": "development",
+    "proposal": "The organization is discussing hosting customer data in Australia.",
+    "question": "What exact Australian data-residency policy has our organization approved?",
+    "expectedSourceIds": [],
+    "expectedStatus": "insufficient_evidence"
+  },
+  {
+    "id": "E09",
+    "split": "validation",
+    "proposal": "Backups are configured for a claims service, but no restore drill or recovery objectives exist.",
+    "question": "How should recovery objectives and restore readiness be established?",
+    "expectedSourceIds": [
+      "STD-009"
+    ],
+    "expectedStatus": "supported"
+  },
+  {
+    "id": "E10",
+    "split": "validation",
+    "proposal": "The staff portal creates audit logs. No retention policy has been supplied.",
+    "question": "For exactly how many years does our approved organizational policy require retaining audit logs?",
+    "expectedSourceIds": [],
+    "expectedStatus": "insufficient_evidence"
+  }
+]
